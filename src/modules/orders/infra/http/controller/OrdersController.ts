@@ -11,6 +11,8 @@ export default class OrdersController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    // TODO
+    const { customer_id, products } = request.body;
+
+    return response.json({ customer_id, products });
   }
 }
