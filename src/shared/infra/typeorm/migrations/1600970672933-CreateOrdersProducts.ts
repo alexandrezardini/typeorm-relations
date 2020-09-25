@@ -14,18 +14,14 @@ export default class OrdersProducts1600970672933 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'product_id',
-            type: 'uuid',
-          },
-          {
-            name: 'order_id',
-            type: 'uuid',
-          },
-          {
             name: 'price',
             type: 'decimal',
-            precision: 5,
+            precision: 10,
             scale: 2,
+          },
+          {
+            name: 'quantity',
+            type: 'integer',
           },
           {
             name: 'created_at',
@@ -36,24 +32,6 @@ export default class OrdersProducts1600970672933 implements MigrationInterface {
             name: 'updated_at',
             type: 'timestamp',
             default: 'now()',
-          },
-        ],
-        foreignKeys: [
-          {
-            name: 'productId',
-            referencedTableName: 'products',
-            referencedColumnNames: ['id'],
-            columnNames: ['product_id'],
-            onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
-          },
-          {
-            name: 'orderId',
-            referencedTableName: 'orders',
-            referencedColumnNames: ['id'],
-            columnNames: ['order_id'],
-            onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
           },
         ],
       }),
